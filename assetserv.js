@@ -1,40 +1,36 @@
 'use strict'
 
 
-get = function(err, id){
+var asset = module.exports = {}
 
+asset.get = function(id){
 
-	if (err) return false
-		
-	var myasset= [{'id': '123', 'status': true, 'name': 'router', 'location': '1 floor'}]
+	var myasset= {'id': '123', 'status': true, 'name': 'router', 'location': '1 floor'}
 
 	if (id)
 		return myasset
 	else
 		return false
 }
-save = function(err, myasset){
 
-	if (err) return false
-	
+asset.save = function(myasset){
+
 	if (myasset)
 		return true
 	else
 		return false
 
-
 }
 
+asset.update = function(myasset){
 
-update = function(err, myasset){
-
-
-	if (err) return false
-	
-	if (myasset.id)
+	if (typeof myasset.id != "undefined")
 		return true
 	else
-		return false	
+		return false
+
 }
-
-
+/*
+var myasset= [{'id': '123', 'status': true, 'name': 'router', 'location': '1 floor'}]
+asset.update(myasset);
+*/
